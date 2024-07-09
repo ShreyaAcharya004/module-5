@@ -1,0 +1,77 @@
+ 1	Why Django should be used for web-development? Explain how you can create a project in Django?
+ Ans:	•	Django is a fast and simple framework that helps to save development time and therefore increase the overall cost-effectiveness of the project. Also, Django has one of the best out-of-the-box security systems out there. It helps developers avoid common security issues that could otherwise incur additional costs later.
+      
+      - Some Step's to create a project in Django : 
+	(1)create virtual env. ---> python -m venv
+                                                    (Any Name)
+	(2)pip install django - For Install Django
+	(3)django-admin startproject projectname 
+              For Create a Django Project
+	(4)python manage.py startapp appname - For 
+              Create a Django App
+             Development Server
+	(5)python manage.py makemigrations - For 
+              Create Database
+	(6)python manage.py migrate - for mgrate the 
+              database
+	(7)python manage.py runserver - For Run the 
+
+
+ 7	Explain what does django-admin.py make messages command is used for?
+Ans:	•	The Django-admin.py make messages command is used in Django for the purpose of creating or updating language translation 
+files based on the marked translation strings in your Django project.
+
+Que 6	Mention what command line can be used to load data into Django?
+Ans:	•	Django provides a management command called 'load data' that allows you to load data into your Django application from fixture files.
+Fixture files are serialized representations of Django models, typically in JSON, YAML, or XML format.
+
+Que 5	What is a QuerySet ? Write program to create a new Post object in databa
+•	QuerySet :  QuerySet is a collection of database queries that can be used to retrieve data from a database. It's a high-level API provided by Django for interacting with databases.
+
+models.py
+
+from django.db import models
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    author = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+
+
+
+
+
+
+
+
+Que 4	What is Django URLs?make program to create django urls
+Ans:	•	In Django, URLs are patterns used to map URLs to views within a web application.
+The URL patterns are defined in the urls.py module of each Django app, and they determine which view function or class-based view should be called for a given URL.
+•	urls.py:
+# Example app/urls.py
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),  # Matches the base URL
+    path('about/', views.about, name='about'),  # Matches /about/
+    path('contact/', views.contact, name='contact'),  # Matches /contact/
+    path('posts/<int:pk>/', views.post_detail, name='post_detail'),  # Matches /posts/1/, /posts/2/
+]
+
+
+Que 2	How to check installed version of django?
+Ans:	•	Open your command line or terminal and run the following command : python -m django --version
+
+Que 3	Explain what does django-admin.py make messages command is used for?
+Ans:	•	The make_messages command scans your Django project for text strings marked for translation in your code and creates or updates message files for different languages. 
+•	These message files contain the original text strings and placeholders, and they serve as templates for translators to provide translations.
+
+
+
